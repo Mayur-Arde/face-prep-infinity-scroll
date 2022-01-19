@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -8,13 +9,13 @@ function Login() {
   // form validation
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    if (username.trim() && password.trim()) {
-      window.location = '/Home';
-    }
 
     if (username === '' || password === '') {
       alert('Please fill out all fields');
+    }
+    console.log(username, password);
+    if (username.trim() && password.trim()) {
+      window.location = '/Home';
     }
   };
 
@@ -48,9 +49,14 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn submit-btn" onClick={handleSubmit}>
+        <Link
+          to="/home"
+          type="submit"
+          className="btn submit-btn"
+          onClick={handleSubmit}
+        >
           Login
-        </button>
+        </Link>
       </form>
     </div>
   );
