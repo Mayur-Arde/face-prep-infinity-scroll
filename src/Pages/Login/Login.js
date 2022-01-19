@@ -49,14 +49,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <Link
-          to="/Home"
-          type="submit"
-          className="btn submit-btn"
-          onClick={handleSubmit}
-        >
-          Login
-        </Link>
+        <Link to='/Home' className='btn submit-btn' onClick={handleSubmit}>Login</Link>
       </form>
     </div>
   );
