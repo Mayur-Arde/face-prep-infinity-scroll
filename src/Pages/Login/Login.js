@@ -50,7 +50,7 @@ function Login() {
           />
         </div>
         <Link
-          to="/home"
+          to="/Home"
           type="submit"
           className="btn submit-btn"
           onClick={handleSubmit}
