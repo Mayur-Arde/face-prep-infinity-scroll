@@ -1,38 +1,183 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* navbar style  */
+.brand-logo {
+  width: 200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* login style  */
+.login {
+  margin-top: 7rem;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 1.5rem 0rem;
+  background-color: #F1593F;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  background-color: white;
+  padding: 0.5rem 0.77rem;
+  border-radius: 50%;
+}
+
+.form-group input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 250px;
+  padding: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-group input:hover {
+  border: 2px solid #9ed3ff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 2px solid #e8f0fe;
+  box-shadow: 0px 0px 0px 2px #e8f0fe;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.submit-btn{
+    background: #ffffff;
+    color: #F05136;
+}
+.btn:hover {
+  box-shadow: 0px 0px 2px 0.5px #19191963;
+}
+
+/* Home style  */
+.logout-btn{
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #F05136;
+  color: #ffffff;
+}
+
+/* users  */
+.users{
+  padding:3.5rem 0rem; ;
+}
+
+.users-center{
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.2rem;
+}
+
+.single-user{
+  height: 19rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.single-user  img{
+  width: 100%;
+  height: 100%;
+}
+
+.single-user h4 {
+  margin-bottom: 0.5rem;
+}
+.single-user p {
+  margin-bottom: 0;
+}
+
+.user-info {
+  position: absolute;
+  width: 100%;
+  padding: 0.5rem;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
   color: white;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.single-user:hover .user-info {
+  transform: translateY(0%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loading{
+  margin-top: 5.5rem;
+  font-size: 4rem;
+}
+
+/* small screen view  */
+@media all and (max-width:375px) {
+  .brand-logo {
+    width: 180px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav {
+    padding: 1.2rem 0.5rem; 
   }
+
+  .login{
+    margin-top: 5.8rem;
+  }
+
+  .form {
+    max-width: 320px;
+  }
+
 }
